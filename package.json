@@ -15,14 +15,16 @@
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
-    "@rolldown/binding-win32-x64-msvc": "^1.0.1",
-    "@tailwindcss/oxide-win32-x64-msvc": "^4.2.1",
     "drizzle-orm": "0.45.2",
-    "lightningcss-win32-x64-msvc": "^1.31.1",
     "next": "16.2.6",
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "zustand": "^5.0.14"
+  },
+  "optionalDependencies": {
+    "@rolldown/binding-win32-x64-msvc": "^1.0.1",
+    "@tailwindcss/oxide-win32-x64-msvc": "^4.2.1",
+    "lightningcss-win32-x64-msvc": "^1.31.1"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.37.1",
