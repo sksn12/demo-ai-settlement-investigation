@@ -45,7 +45,7 @@ export const useSettlementStore = create<SettlementState>((set) => ({
   scenarioId: "batch-failure",
   scenarioHasRun: false,
   systemTab: "pos",
-  selectedReference: "JV-20260716-9001",
+  selectedReference: "VV-20260716-9001",
   traceSource: "erp",
   analyzing: false,
   analyzed: false,
@@ -72,5 +72,5 @@ export const useSettlementStore = create<SettlementState>((set) => ({
   nextGuide: () => set((state) => ({ guideStep: Math.min(7, state.guideStep + 1) })),
   previousGuide: () => set((state) => ({ guideStep: Math.max(0, state.guideStep - 1) })),
   endGuide: () => set({ guideActive: false }),
-  resetDemo: () => set({ view: "dashboard", scenarioId: "batch-failure", scenarioHasRun: false, systemTab: "pos", selectedReference: "JV-20260716-9001", traceSource: "erp", analyzing: false, analyzed: false, selectedHypothesis: 0, assignedOwner: "", requestGenerated: false, reprocessing: false, resolved: false, guideActive: false, guideStep: 0 }),
+  resetDemo: () => set({ view: "dashboard", scenarioId: "batch-failure", scenarioHasRun: false, systemTab: "pos", selectedReference: "VV-20260716-9001", traceSource: "erp", analyzing: false, analyzed: false, selectedHypothesis: 0, assignedOwner: "", requestGenerated: false, reprocessing: false, resolved: false, guideActive: false, guideStep: 0 }),
 }));

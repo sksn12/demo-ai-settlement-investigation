@@ -416,3 +416,50 @@ button:disabled { cursor: not-allowed; opacity: .55; }
   .tour-body h2 { font-size: 16px; }
   .guide-active[data-guide-step] [data-tour] { scroll-margin-bottom: 330px; }
 }
+/* Period reconciliation and practitioner-feedback drilldowns */
+.period-control { display: grid; grid-template-columns: minmax(220px,1fr) auto minmax(280px,auto); gap: 24px; align-items: center; padding: 22px 24px; }
+.period-control h2 { margin: 4px 0 5px; font-size: 18px; }
+.period-control p { margin: 0; color: var(--muted); font-size: 13px; }
+.period-tabs { display: flex; padding: 4px; border: 1px solid var(--line); border-radius: 10px; background: #f5f8fc; }
+.period-tabs button { min-width: 58px; padding: 8px 12px; border: 0; border-radius: 7px; background: transparent; color: #6b7b91; font-weight: 700; }
+.period-tabs button.active { background: white; color: var(--blue); box-shadow: 0 2px 8px rgba(24,68,123,.12); }
+.period-range { display: grid; grid-template-columns: 1fr auto; gap: 3px 16px; align-items: center; padding-left: 22px; border-left: 1px solid var(--line); }
+.period-range small { color: var(--muted); }
+.period-range strong { font-size: 14px; }
+.period-range button { grid-row: 1 / 3; grid-column: 2; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--blue); font-weight: 700; }
+.section-actions { display: flex; align-items: center; gap: 16px; color: var(--muted); font-size: 12px; }
+.reconciliation-card table { min-width: 1080px; }
+.reconciliation-card tbody tr, .journal-breakdown tbody tr { cursor: pointer; transition: background .15s ease; }
+.reconciliation-card tbody tr:hover, .journal-breakdown tbody tr:hover { background: #f5f9ff; }
+.exception-row { background: #fff8f7 !important; box-shadow: inset 3px 0 #e15454; }
+.selected-row { background: #edf5ff !important; box-shadow: inset 3px 0 var(--blue); }
+.transaction-table table { min-width: 1500px; }
+.transaction-table th, .transaction-table td { white-space: nowrap; }
+.journal-breakdown .section-title p, .included-sales-card .section-title p { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+.journal-breakdown table { min-width: 1050px; }
+.included-sales-card { overflow: hidden; }
+.conversation-panel { min-width: 0; }
+.message-list { display: grid; gap: 12px; max-height: 360px; overflow: auto; padding: 4px 2px 14px; }
+.message-bubble { max-width: 90%; padding: 14px 16px; border-radius: 12px; background: #f3f7fc; border: 1px solid #dfe7f1; }
+.message-bubble.owner { justify-self: end; background: #edf5ff; border-color: #cbdff7; }
+.message-bubble small { display: block; margin-bottom: 5px; color: var(--muted); }
+.message-bubble strong { display: block; margin-bottom: 5px; font-size: 13px; }
+.message-bubble p { margin: 0; color: #4f6076; font-size: 13px; line-height: 1.65; white-space: pre-wrap; }
+.case-composer { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding-top: 14px; border-top: 1px solid var(--line); }
+.case-composer textarea { min-height: 76px; resize: vertical; padding: 12px; border: 1px solid var(--line); border-radius: 9px; font: inherit; }
+.case-composer button { align-self: end; }
+.reprocess-panel > .before-after { max-width: 760px; margin: 0 auto 18px; }
+.reprocess-panel > .verification-list { grid-template-columns: repeat(4,1fr); }
+.reprocess-panel > .primary-button { max-width: 520px; margin: 18px auto 0; }
+@media (max-width: 1100px) {
+  .period-control { grid-template-columns: 1fr; }
+  .period-range { padding: 0; border-left: 0; }
+  .section-actions { align-items: flex-end; flex-direction: column; gap: 6px; }
+  .reprocess-panel > .verification-list { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 720px) {
+  .period-tabs { overflow-x: auto; }
+  .period-tabs button { min-width: 72px; }
+  .reprocess-panel > .verification-list { grid-template-columns: 1fr; }
+  .section-actions > span { display: none; }
+}
