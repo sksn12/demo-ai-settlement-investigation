@@ -3,7 +3,7 @@
 import { create } from "zustand";
 import type { SystemKey, TraceSource } from "./system-data";
 
-export type AppView = "guide" | "lab" | "dashboard" | "systemData" | "erp" | "mismatches" | "trace" | "investigation" | "resolution" | "history";
+export type AppView = "guide" | "lab" | "dashboard" | "systemData" | "erp" | "cardRules" | "mismatches" | "case" | "trace" | "investigation" | "resolution" | "caseHistory" | "history";
 
 type SettlementState = {
   view: AppView;
@@ -25,6 +25,7 @@ type SettlementState = {
   setSystemTab: (systemTab: SystemKey) => void;
   selectScenario: (id: string) => void;
   runScenario: () => void;
+  openCase: (reference: string, source: TraceSource) => void;
   openTrace: (reference: string, source: TraceSource) => void;
   startAnalysis: () => void;
   finishAnalysis: () => void;
@@ -60,6 +61,7 @@ export const useSettlementStore = create<SettlementState>((set) => ({
   setSystemTab: (systemTab) => set({ systemTab }),
   selectScenario: (scenarioId) => set({ scenarioId, scenarioHasRun: false, analyzed: false, selectedHypothesis: 0, assignedOwner: "", requestGenerated: false, resolved: false }),
   runScenario: () => set({ view: "dashboard", scenarioHasRun: true, analyzed: false, resolved: false }),
+  openCase: (selectedReference, traceSource) => set({ view: "case", selectedReference, traceSource }),
   openTrace: (selectedReference, traceSource) => set({ view: "trace", selectedReference, traceSource }),
   startAnalysis: () => set({ analyzing: true, analyzed: false }),
   finishAnalysis: () => set({ analyzing: false, analyzed: true }),
